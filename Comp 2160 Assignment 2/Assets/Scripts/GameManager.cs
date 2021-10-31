@@ -5,6 +5,12 @@ using UnityEngine.Analytics;
 
 public class GameManager : MonoBehaviour
 {
+
+    public Rigidbody player;
+    public float playerHealth = 100;
+    public float healthRestore = 50;
+    public GameObject checkpoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,20 +20,46 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void GameOver()
     {
-        //time since beginning
-        //players position
-        //object player collided with
         AnalyticsEvent.GameOver();
     }
 
-    void Checkpoint()
+    void Checkpoint(GameObject checkpoint)
     {
-        //time since beginning
-        //player health (before checkpoint health boost
+        float TimeSinceStart = Time.realtimeSinceStartup;
+
+        Analytics.CustomEvent("Checkpoint", new Dictionary<string, object>
+        {
+            {"Time since start of game:", TimeSinceStart},
+            {"Player health:", playerHealth}
+        });
+
+        //playerHealth += healthRestore;
+
+        /*
+        if(checkpoint == lastCheckpoint)
+        {
+            GameOver();
+        }
+        */
+    }
+
+    void Death(GameObject causeOfDeath)
+    {
+        float TimeSinceStart = Time.realtimeSinceStartup;
+        Vector3 playerPosition = player.transform.localPosition;
+
+        Analytics.CustomEvent("Death", new Dictionary<string, object>
+        {
+            {"Time since start of game:", TimeSinceStart},
+            {"Player position:", playerPosition},
+            {"Cause of death:", causeOfDeath}
+        });
+
+        GameOver();
     }
 }
