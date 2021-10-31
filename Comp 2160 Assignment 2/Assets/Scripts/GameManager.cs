@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public float playerHealth = 100;
     public float healthRestore = 50;
     public GameObject checkpoint;
+    public float checkpointRadius = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +24,17 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void GameOver()
+    void GameOver(bool died)
     {
+        if (died)
+        {
+            // You died text on ui
+        }
+        else
+        {
+            // Game won text on ui
+        }
+        // Make ui visible
         AnalyticsEvent.GameOver();
     }
 
@@ -60,6 +70,6 @@ public class GameManager : MonoBehaviour
             {"Cause of death:", causeOfDeath}
         });
 
-        GameOver();
+        GameOver(true);
     }
 }

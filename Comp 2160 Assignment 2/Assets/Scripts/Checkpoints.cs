@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Checkpoints : MonoBehaviour
 {
+
+    private float radius;
+
     // Start is called before the first frame update
     void Start()
     {
-        Vector3[] checkpoints = new Vector3[transform.childCount];
-        for(int i = 0; i < checkpoints.Length; i++)
-        {
-            checkpoints[i] = transform.GetChild(i).position;
-        }
+        // Get radius from gameManager
     }
 
     // Update is called once per frame
