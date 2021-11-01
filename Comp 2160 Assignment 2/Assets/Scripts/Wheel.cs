@@ -21,6 +21,7 @@ public class Wheel : MonoBehaviour
         // makes the mesh move to the same position as the wheel collider
 
         wheelCol.GetWorldPose(out Vector3 position, out Quaternion rotation);
+       // position = new Vector3(position.x -0.62f, position.y, position.z);
         wheelMesh.transform.position = position;
         wheelMesh.transform.rotation = rotation;
     }

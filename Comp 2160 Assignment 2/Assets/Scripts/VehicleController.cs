@@ -15,20 +15,28 @@ public class VehicleController : MonoBehaviour
     float accelInput;
     float turningInput;
 
+    //Center of mass Tuning
+    public bool debug;
+    Rigidbody rigidBody;
+    public Vector3 cOM;
     void Start()
     {
-        
+        rigidBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        rigidBody.centerOfMass = cOM;
         accelInput = Input.GetAxis("Vertical");
         turningInput = Input.GetAxis("Horizontal");
 
+
+        
         foreach(Wheel wheel in poweredWheels)
         {
             wheel.Acceleration(accelInput * horsepower);
+            
         }
 
         foreach (Wheel wheel in steeringWheels)
@@ -37,5 +45,14 @@ public class VehicleController : MonoBehaviour
         }
 
 
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (debug)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawSphere(transform.position + transform.rotation * rigidBody.centerOfMass, 0.01f);
+        }
     }
 }
