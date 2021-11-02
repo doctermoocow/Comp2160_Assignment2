@@ -73,24 +73,4 @@ public class GameManager : MonoBehaviour
 
         GameOver(true);
     }
-
-    public float getHealth()
-    {
-        return playerHealth;
-    }
-
-    public float getRestore()
-    {
-        return healthRestore;
-    }
-
-    public float getDamage()
-    {
-        return damageValue;
-    }
-
-    public Rigidbody getPlayer()
-    {
-        return player;
-    }
 }

@@ -10,21 +10,21 @@ public class PlayerDamage : MonoBehaviour
     private float damage;
     private float restore;
 
-    private GameManager gameManager;
     private Rigidbody car;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GetComponent<GameManager>();
-        currentHealth = maxHealth;
-        Debug.Log(currentHealth);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        //maxHealth = gameManager.getHealth();
+        //currentHealth = maxHealth;
+        //Debug.Log(currentHealth);
         /*
         if(car.velocity.magnitude > 6)
         {
