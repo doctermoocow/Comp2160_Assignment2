@@ -88,4 +88,9 @@ public class GameManager : MonoBehaviour
     {
         return damageValue;
     }
+
+    public Rigidbody getPlayer()
+    {
+        return player;
+    }
 }
