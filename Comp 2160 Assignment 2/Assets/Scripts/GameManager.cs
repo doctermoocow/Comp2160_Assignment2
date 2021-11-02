@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public Rigidbody player;
     public float playerHealth = 100;
     public float healthRestore = 50;
+    public float damageValue = 1;
     public GameObject checkpoint;
     public float checkpointRadius = 0.5f;
 
@@ -71,5 +72,20 @@ public class GameManager : MonoBehaviour
         });
 
         GameOver(true);
+    }
+
+    public float getHealth()
+    {
+        return playerHealth;
+    }
+
+    public float getRestore()
+    {
+        return healthRestore;
+    }
+
+    public float getDamage()
+    {
+        return damageValue;
     }
 }
