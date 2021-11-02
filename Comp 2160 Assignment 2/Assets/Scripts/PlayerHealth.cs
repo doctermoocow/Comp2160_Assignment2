@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     private float restore;
 
     private Rigidbody car;
+    private Collider carBody;
     private GameManager gameManager;
     
 
@@ -18,24 +19,43 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+
         maxHealth = gameManager.playerHealth;
         currentHealth = maxHealth;
+
         damage = gameManager.damageValue;
         restore = gameManager.healthRestore;
-        car = gameManager.player;
+
+        car = gameObject.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log("current health: " + currentHealth);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer != 7)
+        if(other.gameObject.layer != 7 && other.gameObject.layer != 8)
         {
             currentHealth -= (damage * car.velocity.magnitude);
+        }
+        else if(other.gameObject.layer == 7)
+        {
+            healthRestore();
+        }
+    }
+
+    public void healthRestore()
+    {
+        if((currentHealth + restore) < maxHealth)
+        {
+            currentHealth += restore;
+        }
+        else
+        {
+            currentHealth = maxHealth;
         }
     }
 }

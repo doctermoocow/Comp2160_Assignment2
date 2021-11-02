@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         AnalyticsEvent.GameOver();
     }
 
-    void Checkpoint(GameObject checkpoint)
+    public void Checkpoint(int checkpoint, bool lastCheckpoint)
     {
         float TimeSinceStart = Time.realtimeSinceStartup;
 
@@ -49,14 +49,12 @@ public class GameManager : MonoBehaviour
             {"Player health:", playerHealth}
         });
 
-        //playerHealth += healthRestore;
-
-        /*
-        if(checkpoint == lastCheckpoint)
+        
+        if(lastCheckpoint)
         {
-            GameOver();
+            GameOver(false);
         }
-        */
+        
     }
 
     void Death(GameObject causeOfDeath)

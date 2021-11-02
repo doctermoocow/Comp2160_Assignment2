@@ -10,7 +10,7 @@ public class Checkpoints : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Get radius from gameManager
+        radius = FindObjectOfType<GameManager>().checkpointRadius;
     }
 
     // Update is called once per frame
