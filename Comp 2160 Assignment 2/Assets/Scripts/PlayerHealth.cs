@@ -39,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(other.gameObject.layer != 7 && other.gameObject.layer != 8)
         {
+            Debug.Log(other.gameObject.layer);
             currentHealth -= (damage * car.velocity.magnitude);
         }
         else if(other.gameObject.layer == 7)

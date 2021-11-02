@@ -4,35 +4,52 @@ using UnityEngine;
 
 public class CheckpointParent : MonoBehaviour
 {
-
+    private GameManager gameManager;
     private int currCheckpoint;
     private GameObject[] checkpoints;
+    private bool finalCheckpoint;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
+
         currCheckpoint = 0;
         checkpoints = new GameObject[transform.childCount];
-        /*
-        for (int i = 0; i < checkpoints.Length; i++)
+
+        int i = 0;
+        foreach(Transform child in transform)
         {
-            checkpoints[i] = GetComponentInChildren<Checkpoints>().gameObject;
-            Debug.Log(i);
-            Debug.Log(checkpoints[i]);
-            checkpoints[i].GetComponent<Collider>().enabled = false;
-            
+            checkpoints[i] = child.gameObject;
+            if(i == 0)
+            {
+                checkpoints[i].GetComponent<Collider>().enabled = true;
+            }
+            else
+            {
+                checkpoints[i].GetComponent<Collider>().enabled = false;
+            }
+            i++;
         }
-        checkpoints[0].GetComponent<Collider>().enabled = true;
-        */        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if(checkpoints[currCheckpoint].GetComponent<Collider>().enabled == false)
         {
-            currCheckpoint++;
-            checkpoints[currCheckpoint].GetComponent<Collider>().enabled = true;
+            if(currCheckpoint == checkpoints.Length-1)
+            {
+                finalCheckpoint = true;
+            }
+            else
+            {              
+                finalCheckpoint = false;
+                currCheckpoint++;
+                checkpoints[currCheckpoint].GetComponent<Collider>().enabled = true;
+            }
         }
+        
     }
 }

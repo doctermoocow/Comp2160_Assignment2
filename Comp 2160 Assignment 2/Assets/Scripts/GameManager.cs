@@ -39,14 +39,14 @@ public class GameManager : MonoBehaviour
         AnalyticsEvent.GameOver();
     }
 
-    public void Checkpoint(int checkpoint, bool lastCheckpoint)
+    public void Checkpoint(float currHealth, bool lastCheckpoint)
     {
         float TimeSinceStart = Time.realtimeSinceStartup;
 
         Analytics.CustomEvent("Checkpoint", new Dictionary<string, object>
         {
             {"Time since start of game:", TimeSinceStart},
-            {"Player health:", playerHealth}
+            {"Player health:", currHealth}
         });
 
         

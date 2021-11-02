@@ -822,6 +822,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2774412472169382972, guid: 0851e9a61a9a2d64eb837a9da012e0a8, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774412472169382972, guid: 0851e9a61a9a2d64eb837a9da012e0a8, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774412472169382972, guid: 0851e9a61a9a2d64eb837a9da012e0a8, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774412472169382972, guid: 0851e9a61a9a2d64eb837a9da012e0a8, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774412472169382972, guid: 0851e9a61a9a2d64eb837a9da012e0a8, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3368666969601013491, guid: 0851e9a61a9a2d64eb837a9da012e0a8, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -869,6 +889,10 @@ PrefabInstance:
     - target: {fileID: 5668570406357646320, guid: 0851e9a61a9a2d64eb837a9da012e0a8, type: 3}
       propertyPath: m_Name
       value: Checkpoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 5668570406357646320, guid: 0851e9a61a9a2d64eb837a9da012e0a8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0851e9a61a9a2d64eb837a9da012e0a8, type: 3}
