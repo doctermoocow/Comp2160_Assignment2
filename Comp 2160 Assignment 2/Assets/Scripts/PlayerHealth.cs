@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDamage : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
 
     private float maxHealth;
@@ -17,28 +17,25 @@ public class PlayerDamage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         maxHealth = gameManager.playerHealth;
+        currentHealth = maxHealth;
+        damage = gameManager.damageValue;
+        restore = gameManager.healthRestore;
+        car = gameManager.player;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //maxHealth = gameManager.getHealth();
-        //currentHealth = maxHealth;
-        //Debug.Log(currentHealth);
-        /*
-        if(car.velocity.magnitude > 6)
-        {
-            Debug.Log("woohoo!");
-        }
-        */
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.layer != 7)
         {
-
+            currentHealth -= (damage * car.velocity.magnitude);
         }
     }
 }
