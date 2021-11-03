@@ -225,7 +225,7 @@ WheelCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797560891092069737}
-  m_Center: {x: -0.35, y: 0.3, z: 0.6599998}
+  m_Center: {x: -0.65, y: 0.3, z: 0.6599998}
   m_Radius: 0.3
   m_SuspensionSpring:
     spring: 35000
@@ -294,6 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelMesh: {fileID: 1628439970030740241}
+  meshOffset: {x: -0.3, y: 0, z: 0}
 --- !u!1 &797560891719035741
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelMesh: {fileID: 838303065471819311}
+  meshOffset: {x: -0.3, y: 0, z: 0}
 --- !u!1 &797560891793345681
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +412,7 @@ WheelCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797560891988805799}
-  m_Center: {x: 0.35, y: 0.3, z: 0.6599998}
+  m_Center: {x: 0.65, y: 0.3, z: 0.6599998}
   m_Radius: 0.3
   m_SuspensionSpring:
     spring: 35000
@@ -479,6 +481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelMesh: {fileID: 5848371132405461239}
+  meshOffset: {x: 0.3, y: 0, z: 0}
 --- !u!1 &797560892382186153
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,7 +520,7 @@ WheelCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797560892382186153}
-  m_Center: {x: -0.35, y: 0.3, z: -0.6599998}
+  m_Center: {x: -0.65, y: 0.3, z: -0.6599998}
   m_Radius: 0.3
   m_SuspensionSpring:
     spring: 35000
@@ -578,7 +581,7 @@ WheelCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797560892619762702}
-  m_Center: {x: 0.35, y: 0.3, z: -0.6599998}
+  m_Center: {x: 0.65, y: 0.3, z: -0.6599998}
   m_Radius: 0.3
   m_SuspensionSpring:
     spring: 35000
@@ -647,6 +650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelMesh: {fileID: 7742335641098033937}
+  meshOffset: {x: 0.3, y: 0, z: 0}
 --- !u!1 &1717221062670231029
 GameObject:
   m_ObjectHideFlags: 0

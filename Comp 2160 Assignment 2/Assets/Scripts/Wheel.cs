@@ -7,8 +7,10 @@ public class Wheel : MonoBehaviour
 {
     
     public Transform wheelMesh;
+    public Vector3 meshOffset; //allows individual control of the location of the wheel mesh compare to the wheel collider
 
     private WheelCollider wheelCol;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,7 @@ public class Wheel : MonoBehaviour
 
         wheelCol.GetWorldPose(out Vector3 position, out Quaternion rotation);
        // position = new Vector3(position.x -0.62f, position.y, position.z);
-        wheelMesh.transform.position = position;
+        wheelMesh.transform.localPosition = transform.InverseTransformPoint(position) + meshOffset;
         wheelMesh.transform.rotation = rotation;
     }
 

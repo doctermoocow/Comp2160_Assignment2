@@ -272,9 +272,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3451230841187101251, guid: f0820385bbdf8c8488a630a4f665167e, type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 1060257505}
+    - target: {fileID: 3451230841187101251, guid: f0820385bbdf8c8488a630a4f665167e, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 1060257505}
+    - target: {fileID: 3451230841187101251, guid: f0820385bbdf8c8488a630a4f665167e, type: 3}
       propertyPath: cameraTarget
       value: 
       objectReference: {fileID: 1507656333}
+    - target: {fileID: 3451230841187101251, guid: f0820385bbdf8c8488a630a4f665167e, type: 3}
+      propertyPath: cameraTransfrom
+      value: 
+      objectReference: {fileID: 1060257505}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0820385bbdf8c8488a630a4f665167e, type: 3}
 --- !u!1001 &737226905
@@ -295,6 +307,18 @@ PrefabInstance:
     - target: {fileID: 563205822816094398, guid: 96b40ff1b5489ff459de2d386ec00053, type: 3}
       propertyPath: m_Name
       value: PlayerCar
+      objectReference: {fileID: 0}
+    - target: {fileID: 797560891528935372, guid: 96b40ff1b5489ff459de2d386ec00053, type: 3}
+      propertyPath: meshOffset.x
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 797560891719035743, guid: 96b40ff1b5489ff459de2d386ec00053, type: 3}
+      propertyPath: meshOffset.x
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 797560892639589665, guid: 96b40ff1b5489ff459de2d386ec00053, type: 3}
+      propertyPath: meshOffset.x
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 908381436964426244, guid: 96b40ff1b5489ff459de2d386ec00053, type: 3}
       propertyPath: m_RootOrder
@@ -418,6 +442,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1060257505 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3451230841771211063, guid: f0820385bbdf8c8488a630a4f665167e, type: 3}
+  m_PrefabInstance: {fileID: 543604436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!54 &1507656333 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 563205822816094399, guid: 96b40ff1b5489ff459de2d386ec00053, type: 3}
