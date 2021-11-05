@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 838303065471819311}
   - component: {fileID: 524249703018269802}
   - component: {fileID: 2067432424095235101}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh_frontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,9 @@ GameObject:
   - component: {fileID: 908381436964426244}
   - component: {fileID: 563205822816094399}
   - component: {fileID: 563205822816094384}
-  m_Layer: 0
+  - component: {fileID: 544200328}
+  - component: {fileID: 544200329}
+  m_Layer: 8
   m_Name: PlayerCar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,6 +157,32 @@ MonoBehaviour:
   - {fileID: 797560891719035743}
   debug: 0
   cOM: {x: 0, y: 0.06, z: 0}
+--- !u!64 &544200328
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563205822816094398}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8545447256379345787, guid: e243b3dddc80e3b4fa8922714c77da98, type: 3}
+--- !u!114 &544200329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563205822816094398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef5e8334c7cf944fa5acc848292e8fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &797560890605097604
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 797560890605097605}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Front Wheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797560891092069738}
   - component: {fileID: 797560891092069739}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider_frontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797560891528935371}
   - component: {fileID: 797560891528935372}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BackRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797560891719035742}
   - component: {fileID: 797560891719035743}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Front Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 797560891793345682}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Back Wheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797560891988805720}
   - component: {fileID: 797560891988805721}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider_frontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797560892294113256}
   - component: {fileID: 797560892294113257}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BackLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797560892382186154}
   - component: {fileID: 797560892382186155}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider_backLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +581,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797560892619762703}
   - component: {fileID: 797560892619762688}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider_backRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +642,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797560892639589664}
   - component: {fileID: 797560892639589665}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Front Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,7 +690,7 @@ GameObject:
   - component: {fileID: 8857284997766713753}
   - component: {fileID: 4895931802285921578}
   - component: {fileID: 6202144378244211714}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: spoiler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -744,7 +772,7 @@ GameObject:
   - component: {fileID: 5848371132405461239}
   - component: {fileID: 27125221192638348}
   - component: {fileID: 6797165407372939587}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh_backLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -827,7 +855,7 @@ GameObject:
   - component: {fileID: 3518433757160572937}
   - component: {fileID: 9103441519814659923}
   - component: {fileID: 3895381140839767598}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -928,7 +956,7 @@ GameObject:
   - component: {fileID: 1628439970030740241}
   - component: {fileID: 8397872444928700355}
   - component: {fileID: 1118063032062296969}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh_backRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1010,7 +1038,7 @@ GameObject:
   - component: {fileID: 7742335641098033937}
   - component: {fileID: 5902358214764892291}
   - component: {fileID: 2375732952486708209}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh_frontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
