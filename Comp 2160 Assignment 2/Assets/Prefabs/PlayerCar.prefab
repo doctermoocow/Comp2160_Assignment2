@@ -154,7 +154,7 @@ MonoBehaviour:
   - {fileID: 797560892639589665}
   - {fileID: 797560891719035743}
   debug: 0
-  cOM: {x: 0, y: 0, z: 0}
+  cOM: {x: 0, y: 0.06, z: 0}
 --- !u!1 &797560890605097604
 GameObject:
   m_ObjectHideFlags: 0
