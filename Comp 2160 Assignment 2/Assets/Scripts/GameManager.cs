@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public Rigidbody player;
     public float playerHealth = 100;
     public float healthRestore = 50;
+    public float damageValue = 1;
     public GameObject checkpoint;
     public float checkpointRadius = 0.5f;
 
@@ -38,24 +39,22 @@ public class GameManager : MonoBehaviour
         AnalyticsEvent.GameOver();
     }
 
-    void Checkpoint(GameObject checkpoint)
+    public void Checkpoint(float currHealth, bool lastCheckpoint)
     {
         float TimeSinceStart = Time.realtimeSinceStartup;
 
         Analytics.CustomEvent("Checkpoint", new Dictionary<string, object>
         {
             {"Time since start of game:", TimeSinceStart},
-            {"Player health:", playerHealth}
+            {"Player health:", currHealth}
         });
 
-        //playerHealth += healthRestore;
-
-        /*
-        if(checkpoint == lastCheckpoint)
+        
+        if(lastCheckpoint)
         {
-            GameOver();
+            GameOver(false);
         }
-        */
+        
     }
 
     void Death(GameObject causeOfDeath)
