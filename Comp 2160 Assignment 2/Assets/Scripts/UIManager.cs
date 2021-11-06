@@ -8,20 +8,65 @@ public class UIManager : MonoBehaviour
 
     public Text timer;
     private float minutes;
-    private float seconds;
-    private float hundredths;
+    private float countingTime;
+    private float secCounting;
+
+    private int sec;
+    private int min;
+    private int hund;
+
+    private string secText;
+    private string hundText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        min = 0;
+        sec = 0;
+        hund = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        seconds = (Mathf.Round(Time.realtimeSinceStartup * 1.0f) * 1f)%60;
-        //timer.text = ((Mathf.Round(Time.realtimeSinceStartup * 100.0f) * 0.01f)%60).ToString();
-        timer.text = seconds.ToString();
+        countingTime += Time.deltaTime;
+
+        if(countingTime / 0.01 >= 1)
+        {
+            hund += 1;
+            countingTime = 0;
+        }
+
+        if(hund >= 100)
+        {
+            sec += 1;
+            hund = 0;
+        }
+
+        if(sec >= 60)
+        {
+            min += 1;
+            sec = 0;
+        }
+
+        if(sec < 10)
+        {
+            secText = "0" + sec.ToString();
+        }
+        else
+        {
+            secText = sec.ToString();
+        }
+
+        if (hund < 10)
+        {
+            hundText = "0" + hund.ToString();
+        }
+        else
+        {
+            hundText = hund.ToString();
+        }
+
+        timer.text = min.ToString() + ":" + secText + ":" + hundText;
     }
 }
