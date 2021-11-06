@@ -46,5 +46,6 @@ MonoBehaviour:
   player: {fileID: 0}
   playerHealth: 100
   healthRestore: 50
+  damageValue: 10
   checkpoint: {fileID: 0}
-  checkpointRadius: 0
+  checkpointRadius: 0.5
