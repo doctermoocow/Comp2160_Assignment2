@@ -7,16 +7,15 @@ public class UIManager : MonoBehaviour
 {
 
     public Text timer;
-    private float minutes;
     private float countingTime;
-    private float secCounting;
-
     private int sec;
     private int min;
     private int hund;
-
     private string secText;
     private string hundText;
+    private string timeFormatText;
+
+     
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +66,18 @@ public class UIManager : MonoBehaviour
             hundText = hund.ToString();
         }
 
-        timer.text = min.ToString() + ":" + secText + ":" + hundText;
+        timeFormatText = min.ToString() + ":" + secText + ":" + hundText;
+
+        timer.text = timeFormatText;
+    }
+
+    public string getTime()
+    {
+        return timeFormatText;
+    }
+
+    public void turnOnGameOverPanel()
+    {
+
     }
 }

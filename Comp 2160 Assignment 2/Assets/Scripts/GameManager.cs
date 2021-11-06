@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     void GameOver(bool died)
@@ -39,13 +39,15 @@ public class GameManager : MonoBehaviour
         AnalyticsEvent.GameOver();
     }
 
-    public void Checkpoint(float currHealth, bool lastCheckpoint)
+    public void Checkpoint(bool lastCheckpoint)
     {
-        float TimeSinceStart = Time.realtimeSinceStartup;
+        string CheckpointTime = FindObjectOfType<UIManager>().getTime();
+        float currHealth = FindObjectOfType<PlayerHealth>().getHealth();
+        FindObjectOfType<PlayerHealth>().healthRestore();
 
         Analytics.CustomEvent("Checkpoint", new Dictionary<string, object>
         {
-            {"Time since start of game:", TimeSinceStart},
+            {"Time since start of game:", CheckpointTime},
             {"Player health:", currHealth}
         });
 
