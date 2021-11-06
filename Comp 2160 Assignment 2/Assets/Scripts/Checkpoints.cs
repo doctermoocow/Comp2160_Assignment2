@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Checkpoints : MonoBehaviour
 {
-
-    private float radius;
-    private GameManager gameManager;
+    private SphereCollider myCollider;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
-        radius = gameManager.checkpointRadius;
+        myCollider = GetComponent<SphereCollider>();
     }
 
     // Update is called once per frame
@@ -25,7 +22,8 @@ public class Checkpoints : MonoBehaviour
     {
         if(other.gameObject.layer == 8)
         {
-            gameObject.GetComponent<Collider>().enabled = false;
+            myCollider.enabled = false;
+            GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
         }
     }
 }

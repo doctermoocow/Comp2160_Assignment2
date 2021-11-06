@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public GameObject checkpoint;
     public float checkpointRadius = 0.5f;
 
+    private Dictionary<int, string> checkpointCompletion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,46 +29,47 @@ public class GameManager : MonoBehaviour
 
     void GameOver(bool died)
     {
+        string gameOverText;
+        checkpointCompletion = FindObjectOfType<CheckpointParent>().getCheckpointStatus();
         if (died)
         {
-            // You died text on ui
+            gameOverText = "You died!";
         }
         else
         {
-            // Game won text on ui
+            gameOverText = "You win!";
         }
-        // Make ui visible
+        FindObjectOfType<UIManager>().activateGameOverPanel(gameOverText, checkpointCompletion);
         AnalyticsEvent.GameOver();
     }
 
-    public void Checkpoint(bool lastCheckpoint)
+    public void Checkpoint(bool finalCheckpoint)
     {
-        string CheckpointTime = FindObjectOfType<UIManager>().getTime();
         float currHealth = FindObjectOfType<PlayerHealth>().getHealth();
+        string checkpointTime = FindObjectOfType<UIManager>().getTime();
         FindObjectOfType<PlayerHealth>().healthRestore();
 
         Analytics.CustomEvent("Checkpoint", new Dictionary<string, object>
         {
-            {"Time since start of game:", CheckpointTime},
+            {"Time since start of game:", checkpointTime},
             {"Player health:", currHealth}
         });
 
-        
-        if(lastCheckpoint)
+        if(finalCheckpoint)
         {
             GameOver(false);
         }
         
     }
 
-    void Death(GameObject causeOfDeath)
+    public void Death(string causeOfDeath)
     {
-        float TimeSinceStart = Time.realtimeSinceStartup;
+        string timeOfDeath = FindObjectOfType<UIManager>().getTime();
         Vector3 playerPosition = player.transform.localPosition;
 
         Analytics.CustomEvent("Death", new Dictionary<string, object>
         {
-            {"Time since start of game:", TimeSinceStart},
+            {"Time since start of game:", timeOfDeath},
             {"Player position:", playerPosition},
             {"Cause of death:", causeOfDeath}
         });

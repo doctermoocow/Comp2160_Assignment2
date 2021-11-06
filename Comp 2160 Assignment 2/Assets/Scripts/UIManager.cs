@@ -15,7 +15,9 @@ public class UIManager : MonoBehaviour
     private string hundText;
     private string timeFormatText;
 
-     
+    public GameObject gameOverPanel;
+    public Text gameOverText;
+    public Text checkpointsText;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,8 @@ public class UIManager : MonoBehaviour
         min = 0;
         sec = 0;
         hund = 0;
+
+        gameOverPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -76,8 +80,16 @@ public class UIManager : MonoBehaviour
         return timeFormatText;
     }
 
-    public void turnOnGameOverPanel()
+    public void activateGameOverPanel(string winOrDied, Dictionary<int, string> checkpointStatus)
     {
-
+        string checkpointTextString = "";
+        gameOverText.text = winOrDied;
+        for(int i = 0; i < checkpointStatus.Count; i++)
+        {
+            checkpointTextString = checkpointTextString + "Checkpoint " + 
+                (i+1).ToString() + ": " + checkpointStatus[i] + "\n";
+        }
+        checkpointsText.text = checkpointTextString;
+        gameOverPanel.SetActive(true);
     }
 }
