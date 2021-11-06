@@ -19,6 +19,8 @@ public class UIManager : MonoBehaviour
     public Text gameOverText;
     public Text checkpointsText;
 
+    public GameObject healthBar;
+
     // Start is called before the first frame update
     void Start()
     {

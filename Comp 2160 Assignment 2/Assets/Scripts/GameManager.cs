@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Analytics;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
 
     public Rigidbody player;
     public float playerHealth = 100;
+    public float playerSmoke = 50;
     public float healthRestore = 50;
     public float damageValue = 1;
     public GameObject checkpoint;
@@ -75,5 +77,10 @@ public class GameManager : MonoBehaviour
         });
 
         GameOver(true);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   playerHealth: 100
+  playerSmoke: 50
   healthRestore: 50
   damageValue: 10
   checkpoint: {fileID: 0}
