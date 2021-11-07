@@ -44,7 +44,7 @@ public class CameraController : MonoBehaviour
         newOffset += (oldOffset + (cameraTarget.velocity * velocityEmphasis) - newOffset) * Time.fixedDeltaTime / difPerSecond;
 
         Vector3 offset = Vector3.Lerp(cameraTarget.position, newOffset, scaleFactor);
-        offset.y = hit.point.y;
+      //  offset.y = hit.point.y;
 
        // print(newOffset);
 
